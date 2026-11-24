@@ -1,0 +1,39 @@
+{
+  "name": "omai",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OMAI (Omarchy Based Agent Interface) monorepo: @jseramn/omai-tokens, @jseramn/omai, @jseramn/omai-docs",
+  "license": "SEE LICENSE IN LICENSE",
+  "author": "jseramn",
+  "homepage": "https://github.com/jseramn/omai#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jseramn/omai.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jseramn/omai/issues"
+  },
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=22.12.0",
+    "npm": ">=10"
+  },
+  "scripts": {
+    "build": "npm run build:tokens && npm run build:react && npm run build:docs",
+    "build:tokens": "npm run build -w @jseramn/omai-tokens",
+    "build:react": "npm run build -w @jseramn/omai",
+    "build:docs": "npm run build -w @jseramn/omai-docs",
+    "dev": "npm run build:tokens && npm run dev -w @jseramn/omai-docs",
+    "typecheck": "npm run typecheck -w @jseramn/omai-tokens && npm run typecheck -w @jseramn/omai && npm run typecheck -w @jseramn/omai-docs",
+    "test": "npm run test -w @jseramn/omai-tokens && npm run test -w @jseramn/omai",
+    "clean": "node scripts/clean.mjs packages/tokens/dist packages/react/dist apps/docs/dist"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2"
+  }
+}

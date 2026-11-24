@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@import "@jseramn/omai-tokens/tailwind.css";
+
+/* Keep Mako toast stack below the persistent sticky 28px top Waybar */
+.omai-toast-viewport[data-placement^="top-"] {
+  top: calc(var(--omai-waybar-height, 28px) + 14px);
+}
+
+/* Allow PixelField hero container to expand smoothly with stacked mobile content */
+.omai-pixel-field__content {
+  height: auto;
+  min-height: 100%;
+}
+
+/* Prevent horizontal overflow on 390px mobile viewports from wide tables/code/tabs */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.omai-tabs,
+.omai-tabs__panel,
+.omai-card,
+.omai-window-pane,
+.omai-window-pane__body,
+.omai-code-block {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.omai-table {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}

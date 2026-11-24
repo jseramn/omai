@@ -1,0 +1,34 @@
+/* Theme scope + omarchy.org diagonal-wipe theme transition. OWNER: architect. */
+@layer components {
+  .omai-theme-scope {
+    background-color: var(--omai-bg);
+    color: var(--omai-text);
+    font-family: var(--omai-font-mono);
+  }
+
+  /* Shared visually-hidden helper (for labels / live regions). */
+  .omai-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+@keyframes omai-wipe-in {
+  from { clip-path: polygon(0 0, 0 0, -20% 100%, -20% 100%); }
+  to { clip-path: polygon(0 0, 120% 0, 100% 100%, -20% 100%); }
+}
+
+[data-omai-transition="wipe"]::view-transition-old(root) {
+  animation: none;
+}
+
+[data-omai-transition="wipe"]::view-transition-new(root) {
+  animation: omai-wipe-in var(--omai-duration-slow, 200ms) var(--omai-ease-out, ease-out) both;
+}

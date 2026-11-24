@@ -1,0 +1,649 @@
+/* OWNER: core-ui-eng. Styles for src/forms. Wrap ALL rules in @layer components (ARCHITECTURE.md section 5). */
+@layer components {
+  /* ── FormField & Label ─────────────────────────────────────────── */
+  .omai-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--omai-space-1);
+    width: 100%;
+  }
+
+  .omai-form-field[data-orientation="horizontal"] {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--omai-space-4);
+  }
+
+  .omai-form-field__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+
+  .omai-form-field[data-orientation="horizontal"] .omai-form-field__header {
+    flex: 0 0 11rem;
+    padding-top: var(--omai-space-2);
+  }
+
+  .omai-form-field__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--omai-space-1);
+    flex: 1 1 auto;
+  }
+
+  .omai-label,
+  .omai-form-field__label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--omai-space-1);
+    font-family: var(--omai-font-mono);
+    font-size: var(--omai-text-xs);
+    font-weight: var(--omai-weight-medium);
+    color: var(--omai-text);
+  }
+
+  .omai-label[data-disabled],
+  .omai-form-field__label[data-disabled] {
+    opacity: 0.5;
+  }
+
+  .omai-form-field__required {
+    color: var(--omai-danger);
+    font-weight: var(--omai-weight-bold);
+  }
+
+  .omai-form-field__description {
+    margin: 0;
+    font-family: var(--omai-font-mono);
+    font-size: var(--omai-text-xs);
+    line-height: var(--omai-leading-normal);
+    color: var(--omai-text-muted);
+  }
+
+  .omai-form-field__error {
+    margin: 0;
+    font-family: var(--omai-font-mono);
+    font-size: var(--omai-text-xs);
+    line-height: var(--omai-leading-normal);
+    color: var(--omai-danger);
+  }
+
+  /* ── Input ─────────────────────────────────────────────────────── */
+  .omai-input {
+    width: 100%;
+    font-family: var(--omai-font-mono);
+    color: var(--omai-text);
+    background-color: var(--omai-surface);
+    border: var(--omai-border-width) solid var(--omai-border-strong);
+    border-radius: var(--omai-radius-sm);
+    transition:
+      border-color var(--omai-duration) var(--omai-ease-out),
+      box-shadow var(--omai-duration) var(--omai-ease-out),
+      background-color var(--omai-duration) var(--omai-ease-out);
+  }
+
+  .omai-input::placeholder,
+  .omai-input__control::placeholder {
+    color: var(--omai-text-muted);
+  }
+
+  .omai-input[data-size="sm"] {
+    height: var(--omai-control-h-sm);
+    padding: 0 0.75rem;
+    font-size: var(--omai-text-xs);
+  }
+
+  .omai-input[data-size="md"] {
+    height: var(--omai-control-h-md);
+    padding: 0 0.875rem;
+    font-size: var(--omai-text-sm);
+  }
+
+  .omai-input[data-size="lg"] {
+    height: var(--omai-control-h-lg);
+    padding: 0 1rem;
+    font-size: var(--omai-text-base);
+  }
+
+  .omai-input:focus,
+  .omai-input:focus-visible,
+  .omai-input--affixed:focus-within {
+    outline: none;
+    border-color: var(--omai-brand);
+    box-shadow: 0 0 0 1px var(--omai-brand);
+  }
+
+  .omai-input[data-invalid] {
+    border-color: var(--omai-danger);
+  }
+
+  .omai-input[data-invalid]:focus,
+  .omai-input[data-invalid]:focus-visible,
+  .omai-input--affixed[data-invalid]:focus-within {
+    border-color: var(--omai-danger);
+    box-shadow: 0 0 0 1px var(--omai-danger);
+  }
+
+  .omai-input:disabled,
+  .omai-input[data-disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .omai-input--affixed {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--omai-space-2);
+  }
+
+  .omai-input__control {
+    flex: 1 1 auto;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  .omai-input__control:focus,
+  .omai-input__control:focus-visible {
+    outline: none;
+  }
+
+  .omai-input__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--omai-text-muted);
+    flex-shrink: 0;
+  }
+
+  /* ── Textarea ──────────────────────────────────────────────────── */
+  .omai-textarea {
+    width: 100%;
+    min-height: 5rem;
+    padding: var(--omai-space-2) 0.875rem;
+    font-family: var(--omai-font-mono);
+    font-size: var(--omai-text-sm);
+    line-height: var(--omai-leading-normal);
+    color: var(--omai-text);
+    background-color: var(--omai-surface);
+    border: var(--omai-border-width) solid var(--omai-border-strong);
+    border-radius: var(--omai-radius-sm);
+    transition:
+      border-color var(--omai-duration) var(--omai-ease-out),
+      box-shadow var(--omai-duration) var(--omai-ease-out);
+  }
+
+  .omai-textarea::placeholder {
+    color: var(--omai-text-muted);
+  }
+
+  .omai-textarea[data-resize="none"] {
+    resize: none;
+  }
+
+  .omai-textarea[data-resize="vertical"] {
+    resize: vertical;
+  }
+
+  .omai-textarea[data-resize="both"] {
+    resize: both;
+  }
+
+  .omai-textarea:focus,
+  .omai-textarea:focus-visible {
+    outline: none;
+    border-color: var(--omai-brand);
+    box-shadow: 0 0 0 1px var(--omai-brand);
+  }
+
+  .omai-textarea[data-invalid] {
+    border-color: var(--omai-danger);
+  }
+
+  .omai-textarea[data-invalid]:focus,
+  .omai-textarea[data-invalid]:focus-visible {
+    border-color: var(--omai-danger);
+    box-shadow: 0 0 0 1px var(--omai-danger);
+  }
+
+  .omai-textarea:disabled,
+  .omai-textarea[data-disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* ── Select ────────────────────────────────────────────────────── */
+  .omai-select {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .omai-select__control {
+    appearance: none;
+    width: 100%;
+    font-family: var(--omai-font-mono);
+    color: var(--omai-text);
+    background-color: var(--omai-surface);
+    border: var(--omai-border-width) solid var(--omai-border-strong);
+    border-radius: var(--omai-radius-sm);
+    cursor: pointer;
+    transition:
+      border-color var(--omai-duration) var(--omai-ease-out),
+      box-shadow var(--omai-duration) var(--omai-ease-out);
+  }
+
+  .omai-select__control[data-size="sm"] {
+    height: var(--omai-control-h-sm);
+    padding: 0 2rem 0 0.75rem;
+    font-size: var(--omai-text-xs);
+  }
+
+  .omai-select__control[data-size="md"] {
+    height: var(--omai-control-h-md);
+    padding: 0 2.25rem 0 0.875rem;
+    font-size: var(--omai-text-sm);
+  }
+
+  .omai-select__control[data-size="lg"] {
+    height: var(--omai-control-h-lg);
+    padding: 0 2.5rem 0 1rem;
+    font-size: var(--omai-text-base);
+  }
+
+  .omai-select__control:focus,
+  .omai-select__control:focus-visible {
+    outline: none;
+    border-color: var(--omai-brand);
+    box-shadow: 0 0 0 1px var(--omai-brand);
+  }
+
+  .omai-select__control[data-invalid] {
+    border-color: var(--omai-danger);
+  }
+
+  .omai-select__control[data-invalid]:focus,
+  .omai-select__control[data-invalid]:focus-visible {
+    border-color: var(--omai-danger);
+    box-shadow: 0 0 0 1px var(--omai-danger);
+  }
+
+  .omai-select__control:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .omai-select__chevron {
+    position: absolute;
+    right: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--omai-text-muted);
+    pointer-events: none;
+  }
+
+  /* ── Checkbox ──────────────────────────────────────────────────── */
+  .omai-checkbox {
+    position: relative;
+    display: inline-flex;
+    align-items: flex-start;
+    gap: var(--omai-space-2);
+    cursor: pointer;
+    user-select: none;
+    font-family: var(--omai-font-mono);
+    color: var(--omai-text);
+  }
+
+  .omai-checkbox[data-disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .omai-checkbox__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  .omai-checkbox__box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.0625rem;
+    background-color: var(--omai-surface);
+    border: var(--omai-border-width) solid var(--omai-border-strong);
+    border-radius: var(--omai-radius-xs);
+    color: var(--omai-brand-ink);
+    transition:
+      background-color var(--omai-duration) var(--omai-ease-out),
+      border-color var(--omai-duration) var(--omai-ease-out),
+      transform var(--omai-duration) var(--omai-ease-out);
+  }
+
+  .omai-checkbox[data-size="sm"] .omai-checkbox__box {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .omai-checkbox[data-size="md"] .omai-checkbox__box {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  .omai-checkbox__box[data-state="checked"],
+  .omai-checkbox__box[data-state="indeterminate"] {
+    background-color: var(--omai-brand);
+    border-color: var(--omai-brand);
+  }
+
+  .omai-checkbox[data-invalid] .omai-checkbox__box {
+    border-color: var(--omai-danger);
+  }
+
+  .omai-checkbox__input:focus-visible + .omai-checkbox__box {
+    outline: var(--omai-focus-ring-width) solid var(--omai-focus-ring);
+    outline-offset: var(--omai-focus-ring-offset);
+  }
+
+  .omai-checkbox__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+
+  .omai-checkbox__label {
+    font-size: var(--omai-text-sm);
+    line-height: var(--omai-leading-snug);
+    color: var(--omai-text);
+  }
+
+  .omai-checkbox[data-size="sm"] .omai-checkbox__label {
+    font-size: var(--omai-text-xs);
+  }
+
+  .omai-checkbox__description {
+    font-size: var(--omai-text-xs);
+    color: var(--omai-text-muted);
+  }
+
+  /* ── Switch ────────────────────────────────────────────────────── */
+  .omai-switch-field {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--omai-space-2);
+  }
+
+  .omai-switch-field[data-disabled] {
+    opacity: 0.5;
+  }
+
+  .omai-switch {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 2px;
+    background-color: var(--omai-surface-2);
+    border: var(--omai-border-width) solid var(--omai-border-strong);
+    border-radius: var(--omai-radius-full);
+    cursor: pointer;
+    transition:
+      background-color var(--omai-duration) var(--omai-ease-out),
+      border-color var(--omai-duration) var(--omai-ease-out);
+  }
+
+  .omai-switch[data-size="sm"] {
+    width: 2rem;
+    height: 1.125rem;
+  }
+
+  .omai-switch[data-size="md"] {
+    width: 2.5rem;
+    height: 1.375rem;
+  }
+
+  .omai-switch[data-state="on"] {
+    background-color: var(--omai-brand);
+    border-color: var(--omai-brand);
+  }
+
+  .omai-switch:focus-visible {
+    outline: var(--omai-focus-ring-width) solid var(--omai-focus-ring);
+    outline-offset: var(--omai-focus-ring-offset);
+  }
+
+  .omai-switch:disabled,
+  .omai-switch[data-disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .omai-switch__thumb {
+    display: block;
+    background-color: var(--omai-text);
+    border-radius: var(--omai-radius-full);
+    transition:
+      transform var(--omai-duration) var(--omai-ease-out),
+      background-color var(--omai-duration) var(--omai-ease-out);
+  }
+
+  .omai-switch[data-size="sm"] .omai-switch__thumb {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+
+  .omai-switch[data-size="md"] .omai-switch__thumb {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .omai-switch[data-state="on"] .omai-switch__thumb {
+    background-color: var(--omai-brand-ink);
+  }
+
+  .omai-switch[data-size="sm"][data-state="on"] .omai-switch__thumb {
+    transform: translateX(0.875rem);
+  }
+
+  .omai-switch[data-size="md"][data-state="on"] .omai-switch__thumb {
+    transform: translateX(1.125rem);
+  }
+
+  .omai-switch__label {
+    font-family: var(--omai-font-mono);
+    font-size: var(--omai-text-sm);
+    color: var(--omai-text);
+    cursor: pointer;
+    user-select: none;
+  }
+
+  /* ── RadioGroup & RadioGroupItem ───────────────────────────────── */
+  .omai-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--omai-space-2);
+  }
+
+  .omai-radio-group[data-orientation="horizontal"] {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--omai-space-4);
+  }
+
+  .omai-radio {
+    position: relative;
+    display: inline-flex;
+    align-items: flex-start;
+    gap: var(--omai-space-2);
+    cursor: pointer;
+    user-select: none;
+    font-family: var(--omai-font-mono);
+    color: var(--omai-text);
+  }
+
+  .omai-radio[data-disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .omai-radio__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  .omai-radio__circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.0625rem;
+    background-color: var(--omai-surface);
+    border: var(--omai-border-width) solid var(--omai-border-strong);
+    border-radius: var(--omai-radius-full);
+    transition:
+      border-color var(--omai-duration) var(--omai-ease-out),
+      background-color var(--omai-duration) var(--omai-ease-out);
+  }
+
+  .omai-radio[data-size="sm"] .omai-radio__circle {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .omai-radio[data-size="md"] .omai-radio__circle {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  .omai-radio__circle[data-state="checked"] {
+    border-color: var(--omai-brand);
+  }
+
+  .omai-radio[data-invalid] .omai-radio__circle {
+    border-color: var(--omai-danger);
+  }
+
+  .omai-radio__dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: var(--omai-radius-full);
+    background-color: var(--omai-brand);
+    transform: scale(0);
+    transition: transform var(--omai-duration) var(--omai-ease-out);
+  }
+
+  .omai-radio__circle[data-state="checked"] .omai-radio__dot {
+    transform: scale(1);
+  }
+
+  .omai-radio__input:focus-visible + .omai-radio__circle {
+    outline: var(--omai-focus-ring-width) solid var(--omai-focus-ring);
+    outline-offset: var(--omai-focus-ring-offset);
+  }
+
+  .omai-radio__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+
+  .omai-radio__label {
+    font-size: var(--omai-text-sm);
+    line-height: var(--omai-leading-snug);
+    color: var(--omai-text);
+  }
+
+  .omai-radio[data-size="sm"] .omai-radio__label {
+    font-size: var(--omai-text-xs);
+  }
+
+  .omai-radio__description {
+    font-size: var(--omai-text-xs);
+    color: var(--omai-text-muted);
+  }
+
+  /* ── Slider ────────────────────────────────────────────────────── */
+  .omai-slider {
+    --omai-slider-fill: 0%;
+    display: flex;
+    align-items: center;
+    gap: var(--omai-space-3);
+    width: 100%;
+  }
+
+  .omai-slider[data-disabled] {
+    opacity: 0.5;
+  }
+
+  .omai-slider__input {
+    appearance: none;
+    flex: 1 1 auto;
+    width: 100%;
+    height: 0.375rem;
+    background: linear-gradient(
+      to right,
+      var(--omai-brand) 0%,
+      var(--omai-brand) var(--omai-slider-fill),
+      var(--omai-surface-2) var(--omai-slider-fill),
+      var(--omai-surface-2) 100%
+    );
+    border: var(--omai-border-width) solid var(--omai-border-strong);
+    border-radius: var(--omai-radius-xs);
+    cursor: pointer;
+  }
+
+  .omai-slider[data-size="sm"] .omai-slider__input {
+    height: 0.25rem;
+  }
+
+  .omai-slider__input:focus-visible {
+    outline: var(--omai-focus-ring-width) solid var(--omai-focus-ring);
+    outline-offset: var(--omai-focus-ring-offset);
+  }
+
+  .omai-slider__input::-webkit-slider-thumb {
+    appearance: none;
+    width: 0.875rem;
+    height: 0.875rem;
+    background-color: var(--omai-brand);
+    border: var(--omai-border-width) solid var(--omai-brand-ink);
+    border-radius: var(--omai-radius-xs);
+  }
+
+  .omai-slider__input::-moz-range-thumb {
+    width: 0.875rem;
+    height: 0.875rem;
+    background-color: var(--omai-brand);
+    border: var(--omai-border-width) solid var(--omai-brand-ink);
+    border-radius: var(--omai-radius-xs);
+  }
+
+  .omai-slider__value {
+    min-width: 2.5rem;
+    text-align: right;
+    font-family: var(--omai-font-mono);
+    font-size: var(--omai-text-xs);
+    font-variant-numeric: tabular-nums;
+    color: var(--omai-text-secondary);
+  }
+}

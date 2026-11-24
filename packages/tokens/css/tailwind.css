@@ -1,0 +1,115 @@
+/*
+ * @jseramn/omai-tokens/tailwind.css — Tailwind CSS v4 bridge.
+ *
+ *   @import "tailwindcss";
+ *   @import "@jseramn/omai-tokens/tailwind.css";
+ *
+ * Exposes every --omai-* token as Tailwind utilities (bg-omai-surface, text-omai-text-muted,
+ * border-omai-border-strong, ring-omai-brand, font-omai-mono, rounded-omai-md, shadow-omai, ...)
+ * via `@theme inline`, so utilities always read the LIVE (theme-scoped) variable.
+ * Also re-points Tailwind's default font + radius scales at OMAI tokens, so `rounded-md`
+ * honours data-omai-radius (0px by default) and `font-mono` is JetBrains Mono.
+ *
+ * Still import tokens.css + themes.css (or OmaiProvider) to define the variables.
+ */
+
+@custom-variant omai-dark (&:where([data-omai-mode="dark"], [data-omai-mode="dark"] *));
+@custom-variant omai-light (&:where([data-omai-mode="light"], [data-omai-mode="light"] *));
+@custom-variant dark (&:where([data-omai-mode="dark"], [data-omai-mode="dark"] *));
+
+@theme inline {
+  /* Surfaces & text */
+  --color-omai-bg-deep: var(--omai-bg-deep);
+  --color-omai-bg: var(--omai-bg);
+  --color-omai-surface: var(--omai-surface);
+  --color-omai-surface-2: var(--omai-surface-2);
+  --color-omai-border-subtle: var(--omai-border-subtle);
+  --color-omai-border-strong: var(--omai-border-strong);
+  --color-omai-text: var(--omai-text);
+  --color-omai-text-secondary: var(--omai-text-secondary);
+  --color-omai-text-muted: var(--omai-text-muted);
+  --color-omai-brand: var(--omai-brand);
+  --color-omai-brand-soft: var(--omai-brand-soft);
+  --color-omai-brand-hover: var(--omai-brand-hover);
+  --color-omai-brand-ink: var(--omai-brand-ink);
+  --color-omai-selection: var(--omai-selection);
+  --color-omai-focus-ring: var(--omai-focus-ring);
+  --color-omai-cursor: var(--omai-cursor);
+  --color-omai-scroll-thumb: var(--omai-scroll-thumb);
+  --color-omai-backdrop: var(--omai-backdrop);
+
+  /* Status */
+  --color-omai-success: var(--omai-success);
+  --color-omai-success-soft: var(--omai-success-soft);
+  --color-omai-warning: var(--omai-warning);
+  --color-omai-warning-soft: var(--omai-warning-soft);
+  --color-omai-danger: var(--omai-danger);
+  --color-omai-danger-soft: var(--omai-danger-soft);
+  --color-omai-info: var(--omai-info);
+  --color-omai-info-soft: var(--omai-info-soft);
+
+  /* Pixel field */
+  --color-omai-field-bg: var(--omai-field-bg);
+  --color-omai-field-dim: var(--omai-field-dim);
+  --color-omai-field-mid: var(--omai-field-mid);
+  --color-omai-field-lit: var(--omai-field-lit);
+  --color-omai-field-hover: var(--omai-field-hover);
+  --color-omai-field-crest: var(--omai-field-crest);
+
+  /* ANSI 16 */
+  --color-omai-ansi-0: var(--omai-ansi-0);
+  --color-omai-ansi-1: var(--omai-ansi-1);
+  --color-omai-ansi-2: var(--omai-ansi-2);
+  --color-omai-ansi-3: var(--omai-ansi-3);
+  --color-omai-ansi-4: var(--omai-ansi-4);
+  --color-omai-ansi-5: var(--omai-ansi-5);
+  --color-omai-ansi-6: var(--omai-ansi-6);
+  --color-omai-ansi-7: var(--omai-ansi-7);
+  --color-omai-ansi-8: var(--omai-ansi-8);
+  --color-omai-ansi-9: var(--omai-ansi-9);
+  --color-omai-ansi-10: var(--omai-ansi-10);
+  --color-omai-ansi-11: var(--omai-ansi-11);
+  --color-omai-ansi-12: var(--omai-ansi-12);
+  --color-omai-ansi-13: var(--omai-ansi-13);
+  --color-omai-ansi-14: var(--omai-ansi-14);
+  --color-omai-ansi-15: var(--omai-ansi-15);
+
+  /* Fonts (also re-point Tailwind defaults) */
+  --font-omai-sans: var(--omai-font-sans);
+  --font-omai-mono: var(--omai-font-mono);
+  --font-sans: var(--omai-font-sans);
+  --font-mono: var(--omai-font-mono);
+
+  /* Radius (OMAI scale + Tailwind defaults follow data-omai-radius) */
+  --radius-omai-xs: var(--omai-radius-xs);
+  --radius-omai-sm: var(--omai-radius-sm);
+  --radius-omai-md: var(--omai-radius-md);
+  --radius-omai-lg: var(--omai-radius-lg);
+  --radius-omai-xl: var(--omai-radius-xl);
+  --radius-omai-full: var(--omai-radius-full);
+  --radius-xs: var(--omai-radius-xs);
+  --radius-sm: var(--omai-radius-sm);
+  --radius-md: var(--omai-radius-md);
+  --radius-lg: var(--omai-radius-lg);
+  --radius-xl: var(--omai-radius-xl);
+  --radius-2xl: var(--omai-radius-xl);
+  --radius-3xl: var(--omai-radius-xl);
+  --radius-4xl: var(--omai-radius-xl);
+
+  /* Elevation */
+  --shadow-omai: var(--omai-elevation);
+  --shadow-omai-hover: var(--omai-elevation-hover);
+  --shadow-omai-overlay: var(--omai-elevation-overlay);
+
+  /* Spacing helpers */
+  --spacing-omai-gap-in: var(--omai-gap-in);
+  --spacing-omai-gap-out: var(--omai-gap-out);
+  --spacing-omai-topbar: var(--omai-topbar-height);
+  --spacing-omai-waybar: var(--omai-waybar-height);
+  --container-omai: var(--omai-container-max);
+  --container-omai-measure: var(--omai-measure);
+
+  /* Motion */
+  --ease-omai-out: var(--omai-ease-out);
+  --ease-omai-in-out: var(--omai-ease-in-out);
+}

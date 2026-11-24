@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" data-omai-theme="tokyo-night" data-omai-mode="dark" data-omai-radius="sharp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <title>OMAI — Omarchy Based Agent Interface</title>
+    <script>
+      // No-flash theme restore (mirrors getOmaiInitScript from @jseramn/omai).
+      (function () {
+        try {
+          var d = document.documentElement, k = 'omai-theme';
+          var t = localStorage.getItem(k), r = localStorage.getItem(k + ':radius'), g = localStorage.getItem(k + ':gaps');
+          var light = ['catppuccin-latte', 'flexoki-light', 'rose-pine-dawn'];
+          if (t) { d.setAttribute('data-omai-theme', t); d.setAttribute('data-omai-mode', light.indexOf(t) > -1 ? 'light' : 'dark'); }
+          if (r) d.setAttribute('data-omai-radius', r);
+          if (g) d.setAttribute('data-omai-gaps', g);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

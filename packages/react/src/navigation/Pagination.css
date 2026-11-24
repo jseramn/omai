@@ -1,0 +1,87 @@
+@layer components {
+  .omai-pagination {
+    font-family: var(--omai-font-mono);
+    color: var(--omai-text);
+  }
+
+  .omai-pagination__list {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--omai-space-1);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .omai-pagination__button,
+  .omai-pagination__ellipsis {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--omai-control-h-md);
+    height: var(--omai-control-h-md);
+    padding: 0 var(--omai-space-2);
+    font-family: inherit;
+    font-size: var(--omai-text-sm);
+    font-variant-numeric: tabular-nums;
+    border-radius: var(--omai-radius-sm);
+  }
+
+  .omai-pagination[data-size='sm'] .omai-pagination__button,
+  .omai-pagination[data-size='sm'] .omai-pagination__ellipsis {
+    min-width: var(--omai-control-h-sm);
+    height: var(--omai-control-h-sm);
+    font-size: var(--omai-text-xs);
+  }
+
+  .omai-pagination[data-size='lg'] .omai-pagination__button,
+  .omai-pagination[data-size='lg'] .omai-pagination__ellipsis {
+    min-width: var(--omai-control-h-lg);
+    height: var(--omai-control-h-lg);
+    font-size: var(--omai-text-base);
+  }
+
+  .omai-pagination__button {
+    border: var(--omai-border-width) solid var(--omai-border-subtle);
+    background-color: var(--omai-surface);
+    color: var(--omai-text-secondary);
+    cursor: pointer;
+    transition:
+      background-color var(--omai-duration-fast) var(--omai-ease-out),
+      border-color var(--omai-duration-fast) var(--omai-ease-out),
+      color var(--omai-duration-fast) var(--omai-ease-out),
+      transform var(--omai-duration-fast) var(--omai-ease-out);
+  }
+
+  .omai-pagination__button:hover:not(:disabled) {
+    background-color: var(--omai-surface-2);
+    border-color: var(--omai-border-strong);
+    color: var(--omai-text);
+  }
+
+  .omai-pagination__button:active:not(:disabled) {
+    transform: scale(var(--omai-press-scale));
+  }
+
+  .omai-pagination__button:focus-visible {
+    outline: var(--omai-focus-ring-width) solid var(--omai-focus-ring);
+    outline-offset: var(--omai-focus-ring-offset);
+  }
+
+  .omai-pagination__button[data-state='active'] {
+    background-color: var(--omai-brand);
+    border-color: var(--omai-brand);
+    color: var(--omai-brand-ink);
+    font-weight: var(--omai-weight-bold);
+  }
+
+  .omai-pagination__button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+
+  .omai-pagination__ellipsis {
+    color: var(--omai-text-muted);
+    user-select: none;
+  }
+}

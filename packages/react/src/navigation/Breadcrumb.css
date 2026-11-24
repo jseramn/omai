@@ -1,0 +1,82 @@
+@layer components {
+  .omai-breadcrumb {
+    font-family: var(--omai-font-mono);
+    font-size: var(--omai-text-xs);
+    color: var(--omai-text-secondary);
+  }
+
+  .omai-breadcrumb__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--omai-space-2);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .omai-breadcrumb__item {
+    display: inline-flex;
+    align-items: center;
+    min-width: 0;
+  }
+
+  .omai-breadcrumb__link,
+  .omai-breadcrumb__ellipsis {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--omai-space-1);
+    padding: var(--omai-space-1) var(--omai-space-1);
+    border: none;
+    border-radius: var(--omai-radius-sm);
+    background: transparent;
+    color: var(--omai-text-secondary);
+    font-family: inherit;
+    font-size: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      color var(--omai-duration-fast) var(--omai-ease-out),
+      background-color var(--omai-duration-fast) var(--omai-ease-out);
+  }
+
+  .omai-breadcrumb__link:hover,
+  .omai-breadcrumb__ellipsis:hover {
+    color: var(--omai-text);
+    background-color: var(--omai-surface-2);
+  }
+
+  .omai-breadcrumb__link:focus-visible,
+  .omai-breadcrumb__ellipsis:focus-visible {
+    outline: var(--omai-focus-ring-width) solid var(--omai-focus-ring);
+    outline-offset: var(--omai-focus-ring-offset);
+  }
+
+  .omai-breadcrumb__current {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--omai-space-1);
+    padding: var(--omai-space-1) var(--omai-space-1);
+    color: var(--omai-text);
+    font-weight: var(--omai-weight-medium);
+  }
+
+  .omai-breadcrumb__text {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--omai-space-1);
+    padding: var(--omai-space-1) var(--omai-space-1);
+    color: var(--omai-text-muted);
+  }
+
+  .omai-breadcrumb__icon {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .omai-breadcrumb__separator {
+    color: var(--omai-text-muted);
+    user-select: none;
+  }
+}

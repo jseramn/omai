@@ -1,0 +1,157 @@
+@layer components {
+  .omai-tiling-grid {
+    position: relative;
+    display: grid;
+    gap: var(--omai-gap-in);
+    padding: var(--omai-gap-out);
+    background-color: var(--omai-bg-deep);
+    border: var(--omai-border-width) solid var(--omai-border-subtle);
+    border-radius: var(--omai-radius-md);
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .omai-tiling-grid[data-layout='columns'] {
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  .omai-tiling-grid[data-layout='rows'] {
+    grid-auto-flow: row;
+    grid-auto-rows: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .omai-window-pane {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    background-color: var(--omai-bg);
+    border: var(--omai-border-width) solid var(--omai-border-strong);
+    border-radius: var(--omai-radius-md);
+    color: var(--omai-text);
+    font-family: var(--omai-font-mono);
+    opacity: var(--omai-inactive-opacity);
+    overflow: hidden;
+    outline: none;
+    transition:
+      border-color var(--omai-duration-fast) var(--omai-ease-out),
+      opacity var(--omai-duration-fast) var(--omai-ease-out);
+  }
+
+  .omai-window-pane[data-state='active'] {
+    border: var(--omai-border-active-width) solid var(--omai-brand);
+    opacity: 1;
+  }
+
+  .omai-window-pane:focus-visible {
+    outline: var(--omai-focus-ring-width) solid var(--omai-focus-ring);
+    outline-offset: var(--omai-focus-ring-offset);
+  }
+
+  .omai-window-pane[data-floating] {
+    position: absolute;
+    top: var(--omai-space-6);
+    left: var(--omai-space-6);
+    z-index: 2;
+    min-width: 16rem;
+    min-height: 10rem;
+    box-shadow: var(--omai-elevation-overlay);
+  }
+
+  .omai-window-pane__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--omai-space-2);
+    height: 1.75rem;
+    padding: 0 var(--omai-space-3);
+    background-color: var(--omai-surface);
+    border-bottom: var(--omai-border-width) solid var(--omai-border-subtle);
+    flex-shrink: 0;
+  }
+
+  .omai-window-pane[data-state='active'] .omai-window-pane__header {
+    background-color: var(--omai-surface-2);
+  }
+
+  .omai-window-pane__title-group {
+    display: flex;
+    align-items: center;
+    gap: var(--omai-space-2);
+    min-width: 0;
+  }
+
+  .omai-window-pane__icon {
+    display: inline-flex;
+    align-items: center;
+    color: var(--omai-text-muted);
+    flex-shrink: 0;
+  }
+
+  .omai-window-pane[data-state='active'] .omai-window-pane__icon {
+    color: var(--omai-brand);
+  }
+
+  .omai-window-pane__title {
+    font-size: var(--omai-text-xs);
+    font-weight: var(--omai-weight-medium);
+    color: var(--omai-text-secondary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .omai-window-pane[data-state='active'] .omai-window-pane__title {
+    color: var(--omai-text);
+  }
+
+  .omai-window-pane__actions {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--omai-space-1);
+    flex-shrink: 0;
+  }
+
+  .omai-window-pane__close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    border: none;
+    border-radius: var(--omai-radius-xs);
+    background: transparent;
+    color: var(--omai-text-muted);
+    cursor: pointer;
+    transition:
+      color var(--omai-duration-fast) var(--omai-ease-out),
+      background-color var(--omai-duration-fast) var(--omai-ease-out);
+  }
+
+  .omai-window-pane__close:hover {
+    color: var(--omai-danger);
+    background-color: var(--omai-danger-soft);
+  }
+
+  .omai-window-pane__close:focus-visible {
+    outline: var(--omai-focus-ring-width) solid var(--omai-focus-ring);
+    outline-offset: var(--omai-focus-ring-offset);
+  }
+
+  .omai-window-pane__body {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+    padding: var(--omai-space-3);
+  }
+
+  .omai-window-pane[data-padding='none'] .omai-window-pane__body {
+    padding: 0;
+  }
+
+  .omai-window-pane[data-padding='sm'] .omai-window-pane__body {
+    padding: var(--omai-space-2);
+  }
+}

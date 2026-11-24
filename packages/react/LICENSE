@@ -1,0 +1,61 @@
+OMAI Personal Non-Commercial Source-Available License (v1.0)
+
+Copyright (c) 2026 jseramn (https://github.com/jseramn/omai)
+All rights reserved.
+
+This license governs the use of OMAI ("Omarchy Based Agent Interface"),
+including the @jseramn/omai and @jseramn/omai-tokens packages, documentation,
+source code, stylesheets, and associated files (collectively, the "Software").
+
+1. PERMITTED USE (PERSONAL & NON-COMMERCIAL ONLY)
+Permission is hereby granted, free of charge, to any individual obtaining a
+copy of the Software to view, clone, download, install, run, and modify the
+Software strictly for personal, non-commercial, non-profit use, subject to
+the conditions below:
+
+  (a) Attribution: All copyright notices, credits to jseramn, this LICENSE
+      file, and the accompanying NOTICE.md file must be preserved intact in
+      all copies or substantial portions of the Software.
+  (b) Personal Use Only: Use is limited to personal, educational, research,
+      or hobbyist projects that generate no direct or indirect commercial
+      revenue and are not operated on behalf of a commercial organization.
+
+2. RESTRICTIONS (NO COMMERCIAL USE & NO REDISTRIBUTION)
+Unless you have obtained prior express written permission from the copyright
+holder (jseramn), you may NOT:
+
+  (a) Redistribute: Republish, distribute, resell, rent, lease, sublicense,
+      repackage, or make copies or derivative works of the Software (whether
+      original or modified, in source or compiled form) available to third
+      parties, including via public or private package registries, component
+      libraries, or template distributions.
+      (Exception: Forking the public repository on GitHub solely for personal
+      non-commercial use or for submitting pull requests back to
+      https://github.com/jseramn/omai is permitted.)
+  (b) Commercial Use: Use the Software, in whole or in part, in any
+      commercial product, paid service, client project, SaaS offering,
+      monetized application, or internal business/enterprise production.
+
+3. INSPIRATION & UPSTREAM MIT ATTRIBUTION
+OMAI ("Omarchy Based Agent Interface") is an independent project created and
+maintained by jseramn. Its visual aesthetic, keyboard-first ergonomics, and
+theme palette conventions are inspired by and based on Omarchy
+(https://github.com/omacom/omarchy, https://omarchy.org), which is released
+under the MIT License.
+
+Full upstream MIT license notices and third-party theme palette attributions
+are preserved in NOTICE.md. Nothing in this license restricts any rights
+granted under the MIT License for the original Omarchy project or any
+independently licensed upstream color palettes or dependencies.
+
+OMAI is an independent project and is not affiliated with, sponsored by, or
+endorsed by Omarchy, Basecamp, or 37signals.
+
+4. DISCLAIMER OF WARRANTY & LIMITATION OF LIABILITY
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+IN THE SOFTWARE.

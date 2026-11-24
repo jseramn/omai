@@ -1,0 +1,97 @@
+@layer components {
+  .omai-kv-list {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--omai-font-mono);
+    font-size: var(--omai-text-sm);
+    color: var(--omai-text);
+  }
+
+  .omai-kv-list__row {
+    display: flex;
+    align-items: baseline;
+    gap: var(--omai-space-4);
+    padding: var(--omai-space-3) 0;
+  }
+
+  .omai-kv-list[data-dense] .omai-kv-list__row {
+    padding: var(--omai-space-2) 0;
+    font-size: var(--omai-text-xs);
+  }
+
+  .omai-kv-list[data-divided] .omai-kv-list__row {
+    border-bottom: var(--omai-border-width) solid var(--omai-border-subtle);
+  }
+
+  .omai-kv-list[data-divided] .omai-kv-list__row:last-child {
+    border-bottom: none;
+  }
+
+  .omai-kv-list[data-layout='stacked'] .omai-kv-list__row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--omai-space-1);
+  }
+
+  .omai-kv-list__label {
+    color: var(--omai-text-muted);
+    font-size: var(--omai-text-xs);
+    flex-shrink: 0;
+  }
+
+  .omai-kv-list[data-layout='horizontal'] .omai-kv-list__label {
+    width: var(--omai-kv-label-width, 10rem);
+  }
+
+  .omai-kv-list__value {
+    margin: 0;
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--omai-space-2);
+    color: var(--omai-text);
+  }
+
+  .omai-kv-list__value[data-mono='true'] {
+    font-family: var(--omai-font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .omai-kv-list__value-text {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .omai-kv-list__copy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--omai-space-1);
+    border: none;
+    border-radius: var(--omai-radius-sm);
+    background: transparent;
+    color: var(--omai-text-muted);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition:
+      color var(--omai-duration-fast) var(--omai-ease-out),
+      background-color var(--omai-duration-fast) var(--omai-ease-out);
+  }
+
+  .omai-kv-list__copy:hover {
+    color: var(--omai-text);
+    background-color: var(--omai-surface-2);
+  }
+
+  .omai-kv-list__copy[data-copied] {
+    color: var(--omai-success);
+  }
+
+  .omai-kv-list__copy:focus-visible {
+    outline: var(--omai-focus-ring-width) solid var(--omai-focus-ring);
+    outline-offset: var(--omai-focus-ring-offset);
+  }
+}

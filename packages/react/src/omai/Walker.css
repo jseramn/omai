@@ -1,0 +1,175 @@
+@layer components {
+  .omai-walker-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: var(--omai-z-modal);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 12vh var(--omai-space-4) var(--omai-space-4);
+    background-color: var(--omai-backdrop);
+  }
+
+  .omai-walker {
+    width: 100%;
+    max-width: 40rem;
+    background-color: var(--omai-bg-deep);
+    border: var(--omai-border-width) solid var(--omai-border-strong);
+    border-radius: var(--omai-radius-lg);
+    box-shadow: var(--omai-elevation-overlay);
+    color: var(--omai-text);
+    font-family: var(--omai-font-mono);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    outline: none;
+  }
+
+  .omai-walker__title {
+    padding: var(--omai-space-2) var(--omai-space-4);
+    border-bottom: var(--omai-border-width) solid var(--omai-border-subtle);
+    font-size: var(--omai-text-2xs);
+    font-weight: var(--omai-weight-bold);
+    letter-spacing: var(--omai-tracking-wider);
+    text-transform: uppercase;
+    color: var(--omai-text-muted);
+    background-color: var(--omai-surface);
+  }
+
+  .omai-walker__search {
+    display: flex;
+    align-items: center;
+    gap: var(--omai-space-2);
+    padding: 0 var(--omai-space-4);
+    height: 3rem;
+    border-bottom: var(--omai-border-width) solid var(--omai-border-subtle);
+  }
+
+  .omai-walker__search-icon {
+    color: var(--omai-text-muted);
+    flex-shrink: 0;
+  }
+
+  .omai-walker__input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    border: none;
+    background: transparent;
+    color: var(--omai-text);
+    font-family: var(--omai-font-mono);
+    font-size: var(--omai-text-sm);
+    outline: none;
+  }
+
+  .omai-walker__input::placeholder {
+    color: var(--omai-text-muted);
+  }
+
+  .omai-walker__list {
+    max-height: 22rem;
+    overflow-y: auto;
+    padding: var(--omai-space-2);
+    display: flex;
+    flex-direction: column;
+    gap: var(--omai-space-1);
+  }
+
+  .omai-walker__group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .omai-walker__group-label {
+    padding: var(--omai-space-2) var(--omai-space-2) var(--omai-space-1);
+    font-size: var(--omai-text-2xs);
+    font-weight: var(--omai-weight-bold);
+    letter-spacing: var(--omai-tracking-wider);
+    text-transform: uppercase;
+    color: var(--omai-text-muted);
+  }
+
+  .omai-walker__item {
+    display: flex;
+    align-items: center;
+    gap: var(--omai-space-3);
+    min-height: 2.25rem;
+    padding: var(--omai-space-1) var(--omai-space-3);
+    border-radius: var(--omai-radius-sm);
+    cursor: pointer;
+    user-select: none;
+    transition: background-color var(--omai-duration-fast) var(--omai-ease-out);
+  }
+
+  .omai-walker__item[data-state='active'] {
+    background-color: var(--omai-selection);
+    color: var(--omai-text);
+  }
+
+  .omai-walker__item[data-disabled] {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+
+  .omai-walker__icon {
+    display: inline-flex;
+    align-items: center;
+    color: var(--omai-text-secondary);
+    flex-shrink: 0;
+  }
+
+  .omai-walker__item[data-state='active'] .omai-walker__icon {
+    color: var(--omai-brand);
+  }
+
+  .omai-walker__text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: baseline;
+    gap: var(--omai-space-2);
+  }
+
+  .omai-walker__label {
+    font-size: var(--omai-text-sm);
+    color: var(--omai-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .omai-walker__match {
+    background: transparent;
+    color: var(--omai-brand);
+    font-weight: var(--omai-weight-bold);
+  }
+
+  .omai-walker__description {
+    font-size: var(--omai-text-xs);
+    color: var(--omai-text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .omai-walker__shortcut {
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .omai-walker__empty {
+    padding: var(--omai-space-8) var(--omai-space-4);
+    text-align: center;
+    color: var(--omai-text-muted);
+    font-size: var(--omai-text-sm);
+  }
+
+  .omai-walker__footer {
+    border-top: var(--omai-border-width) solid var(--omai-border-subtle);
+  }
+
+  .omai-walker__footer .omai-hotkey-bar {
+    border: none;
+    border-radius: 0;
+  }
+}

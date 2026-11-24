@@ -1,0 +1,86 @@
+@layer components {
+  .omai-hotkey-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--omai-space-2);
+    padding: var(--omai-space-2) var(--omai-space-3);
+    background-color: var(--omai-surface);
+    border: var(--omai-border-width) solid var(--omai-border-subtle);
+    border-radius: var(--omai-radius-sm);
+    color: var(--omai-text-secondary);
+    font-family: var(--omai-font-mono);
+    font-size: var(--omai-text-xs);
+  }
+
+  .omai-hotkey-bar[data-size='sm'] {
+    padding: var(--omai-space-1) var(--omai-space-2);
+    gap: var(--omai-space-2);
+    font-size: var(--omai-text-2xs);
+  }
+
+  .omai-hotkey-bar[data-position='top'],
+  .omai-hotkey-bar[data-position='bottom'] {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: var(--omai-z-sticky);
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    justify-content: center;
+    background-color: var(--omai-bg-deep);
+  }
+
+  .omai-hotkey-bar[data-position='top'] {
+    top: 0;
+    border-top: none;
+  }
+
+  .omai-hotkey-bar[data-position='bottom'] {
+    bottom: 0;
+    border-bottom: none;
+  }
+
+  .omai-hotkey-bar__item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--omai-space-1);
+    color: inherit;
+    font: inherit;
+  }
+
+  .omai-hotkey-bar__item--interactive {
+    border: none;
+    background: transparent;
+    padding: 2px var(--omai-space-1);
+    border-radius: var(--omai-radius-xs);
+    cursor: pointer;
+    transition:
+      color var(--omai-duration-fast) var(--omai-ease-out),
+      background-color var(--omai-duration-fast) var(--omai-ease-out);
+  }
+
+  .omai-hotkey-bar__item--interactive:hover {
+    color: var(--omai-text);
+    background-color: var(--omai-surface-2);
+  }
+
+  .omai-hotkey-bar__item--interactive:focus-visible {
+    outline: var(--omai-focus-ring-width) solid var(--omai-focus-ring);
+    outline-offset: var(--omai-focus-ring-offset);
+  }
+
+  .omai-hotkey-bar__label {
+    color: var(--omai-text-muted);
+  }
+
+  .omai-hotkey-bar__item--interactive:hover .omai-hotkey-bar__label {
+    color: var(--omai-text);
+  }
+
+  .omai-hotkey-bar__sep {
+    color: var(--omai-border-strong);
+    user-select: none;
+  }
+}

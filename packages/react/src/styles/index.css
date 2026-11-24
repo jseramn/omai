@@ -1,0 +1,17 @@
+/*
+ * @jseramn/omai/styles.css — entry. OWNER: architect.
+ * Bundled into dist/styles.css by scripts/build-css.mjs (relative @imports are inlined).
+ * Requires @jseramn/omai-tokens/tokens.css + themes.css to be loaded (they define every --omai-* var).
+ *
+ * Layer order matches Tailwind v4, so Tailwind utilities (and any unlayered consumer CSS)
+ * always override component styles.
+ */
+@layer theme, base, components, utilities;
+
+@import "./theme.css";
+@import "../primitives/primitives.css";
+@import "../forms/forms.css";
+@import "../feedback/feedback.css";
+@import "../navigation/navigation.css";
+@import "../data/data.css";
+@import "../omai/omai.css";

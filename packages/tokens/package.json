@@ -1,0 +1,63 @@
+{
+  "name": "@jseramn/omai-tokens",
+  "version": "0.1.0",
+  "description": "OMAI (Omarchy Based Agent Interface) design tokens: --omai-* CSS custom properties, 16 themes, Tailwind v4 bridge.",
+  "license": "SEE LICENSE IN LICENSE",
+  "author": "jseramn",
+  "homepage": "https://github.com/jseramn/omai#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jseramn/omai.git",
+    "directory": "packages/tokens"
+  },
+  "bugs": {
+    "url": "https://github.com/jseramn/omai/issues"
+  },
+  "keywords": [
+    "omai",
+    "design-tokens",
+    "design-system",
+    "css-variables",
+    "tailwind",
+    "themes",
+    "agent-interface",
+    "omarchy"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "dist",
+    "css",
+    "src",
+    "LICENSE",
+    "NOTICE.md",
+    "README.md"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "source": "./src/index.ts",
+      "default": "./dist/index.js"
+    },
+    "./tokens.css": "./css/tokens.css",
+    "./base.css": "./css/base.css",
+    "./tailwind.css": "./css/tailwind.css",
+    "./themes.css": "./dist/themes.css",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "node ../../scripts/clean.mjs dist && tsc -p tsconfig.build.json && node scripts/build-css.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --passWithNoTests"
+  },
+  "devDependencies": {
+    "vitest": "^5.1.1"
+  }
+}

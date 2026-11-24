@@ -1,0 +1,52 @@
+/*
+ * @jseramn/omai-tokens/base.css — OPTIONAL element defaults for OMAI (Omarchy Based Agent Interface).
+ * Mono body, Geist headings, themed selection + scrollbars. Zero-specificity (:where) so
+ * consumer CSS and Tailwind utilities always win.
+ */
+@layer theme, base, components, utilities;
+
+@layer base {
+  :where([data-omai-theme], :root) {
+    background-color: var(--omai-bg);
+    color: var(--omai-text);
+    font-family: var(--omai-font-mono);
+    font-size: var(--omai-text-sm);
+    line-height: var(--omai-leading-normal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "calt", "liga";
+    scrollbar-color: var(--omai-scroll-thumb) transparent;
+  }
+
+  :where(h1, h2, h3, h4, h5, h6, th) {
+    font-family: var(--omai-font-sans);
+    letter-spacing: var(--omai-tracking-tight);
+    color: var(--omai-text);
+  }
+
+  :where(h1) { font-weight: var(--omai-weight-medium); }
+  :where(h2, h3) { font-weight: var(--omai-weight-semibold); }
+
+  :where(code, kbd, samp, pre) {
+    font-family: var(--omai-font-mono);
+  }
+
+  :where(a) {
+    color: inherit;
+  }
+
+  ::selection {
+    background-color: var(--omai-selection);
+    color: var(--omai-text);
+  }
+
+  :where(:focus-visible) {
+    outline: var(--omai-focus-ring-width) solid var(--omai-focus-ring);
+    outline-offset: var(--omai-focus-ring-offset);
+  }
+
+  :where(img, video) {
+    outline: 1px solid var(--omai-img-outline);
+    outline-offset: -1px;
+  }
+}

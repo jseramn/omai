@@ -1,0 +1,138 @@
+/*
+ * @jseramn/omai-tokens/tokens.css — theme-independent tokens (typography, geometry, Hyprland, motion).
+ * Static, hand-authored. Color tokens live in themes.css (generated).
+ * Rule: NOTHING here may reference a color variable (see ARCHITECTURE.md §3.6).
+ */
+@layer theme, base, components, utilities;
+
+@layer theme {
+  :root {
+    /* ── Typography ─────────────────────────────────────────────── */
+    --omai-font-sans: "Geist Variable", "Geist", ui-sans-serif, system-ui, sans-serif;
+    --omai-font-mono: "JetBrains Mono Variable", "JetBrains Mono", "JetBrainsMono Nerd Font", ui-monospace, "Cascadia Code", monospace;
+
+    --omai-text-2xs: 0.6875rem;  /* 11px  badges / pills / waybar */
+    --omai-text-xs: 0.75rem;     /* 12px */
+    --omai-text-sm: 0.875rem;    /* 14px */
+    --omai-text-base: 1rem;      /* 16px */
+    --omai-text-lg: 1.125rem;    /* 18px */
+    --omai-text-xl: 1.25rem;     /* 20px */
+    --omai-text-2xl: 1.5rem;     /* 24px */
+    --omai-text-3xl: 1.875rem;   /* 30px  hero h1 */
+    --omai-text-4xl: 2.25rem;    /* 36px */
+    --omai-text-6xl: 3.75rem;    /* 60px */
+    --omai-text-prose: 0.9375rem;/* 15px  prose body */
+
+    --omai-leading-none: 1;
+    --omai-leading-tight: 1.25;
+    --omai-leading-snug: 1.375;
+    --omai-leading-normal: 1.5;
+    --omai-leading-relaxed: 1.625;
+    --omai-leading-prose: 1.65;
+
+    --omai-tracking-tight: -0.025em;
+    --omai-tracking-normal: 0em;
+    --omai-tracking-wide: 0.025em;
+    --omai-tracking-wider: 0.05em;
+    --omai-tracking-widest: 0.1em;
+
+    --omai-weight-regular: 400;
+    --omai-weight-medium: 500;
+    --omai-weight-semibold: 600;
+    --omai-weight-bold: 700;
+
+    /* ── Spacing & layout (4px base) ─────────────────────────────── */
+    --omai-space-unit: 0.25rem;
+    --omai-space-1: 0.25rem;
+    --omai-space-2: 0.5rem;
+    --omai-space-3: 0.75rem;
+    --omai-space-4: 1rem;
+    --omai-space-5: 1.25rem;
+    --omai-space-6: 1.5rem;
+    --omai-space-8: 2rem;
+    --omai-space-10: 2.5rem;
+    --omai-space-12: 3rem;
+    --omai-space-16: 4rem;
+
+    --omai-topbar-height: 3.5rem;   /* sticky header 56px */
+    --omai-waybar-height: 26px;     /* Waybar height */
+    --omai-container-max: 72rem;    /* 1152px */
+    --omai-measure: 48rem;          /* 768px reading width */
+
+    --omai-control-h-sm: 2rem;      /* 32px */
+    --omai-control-h-md: 2.5rem;    /* 40px  h-10 button */
+    --omai-control-h-lg: 3rem;      /* 48px */
+
+    /* ── Borders ─────────────────────────────────────────────────── */
+    --omai-border-width: 1px;
+    --omai-border-active-width: 2px; /* active Hyprland pane / focused window */
+    --omai-focus-ring-width: 2px;
+    --omai-focus-ring-offset: 2px;
+
+    /* ── Hyprland gaps (looknfeel: gaps_in = 5, gaps_out = 10) ──── */
+    --omai-gap-in: 5px;
+    --omai-gap-out: 10px;
+    --omai-inactive-opacity: 0.96;
+
+    /* ── Motion ──────────────────────────────────────────────────── */
+    --omai-duration-fast: 100ms;
+    --omai-duration: 150ms;
+    --omai-duration-slow: 200ms;     /* theme diagonal wipe */
+    --omai-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --omai-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+    --omai-press-scale: 0.96;        /* active:scale-[0.96] */
+
+    /* ── Z-index ─────────────────────────────────────────────────── */
+    --omai-z-base: 0;
+    --omai-z-sticky: 100;
+    --omai-z-dropdown: 1000;
+    --omai-z-overlay: 1100;
+    --omai-z-modal: 1200;
+    --omai-z-popover: 1300;
+    --omai-z-toast: 1400;
+    --omai-z-tooltip: 1500;
+  }
+
+  /* ── Radius modes ──────────────────────────────────────────────────
+   * sharp (DEFAULT): every radius is 0 — razor pixel corners.
+   * soft (Hyprland rounding): 4 / 6 / 8px.                            */
+  :root,
+  [data-omai-radius="sharp"] {
+    --omai-radius-xs: 0px;
+    --omai-radius-sm: 0px;
+    --omai-radius-md: 0px;
+    --omai-radius-lg: 0px;
+    --omai-radius-xl: 0px;
+    --omai-radius-full: 0px;
+  }
+
+  [data-omai-radius="soft"] {
+    --omai-radius-xs: 2px;
+    --omai-radius-sm: 4px;
+    --omai-radius-md: 6px;
+    --omai-radius-lg: 8px;  /* Hyprland decoration.rounding = 8 */
+    --omai-radius-xl: 12px;
+    --omai-radius-full: 9999px;
+  }
+
+  /* ── Gap modes (Super+Shift+Backspace toggles zero-gap) ─────────── */
+  [data-omai-gaps="none"] {
+    --omai-gap-in: 0px;
+    --omai-gap-out: 0px;
+  }
+
+  [data-omai-gaps="wide"] {
+    --omai-gap-in: 10px;
+    --omai-gap-out: 20px;
+  }
+
+  /* ── Reduced motion ─────────────────────────────────────────────── */
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --omai-duration-fast: 0ms;
+      --omai-duration: 0ms;
+      --omai-duration-slow: 0ms;
+      --omai-press-scale: 1;
+    }
+  }
+}

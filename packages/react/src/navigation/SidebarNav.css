@@ -1,0 +1,166 @@
+@layer components {
+  .omai-sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    background-color: var(--omai-bg);
+    color: var(--omai-text);
+    font-family: var(--omai-font-mono);
+    font-size: var(--omai-text-sm);
+    border-right: var(--omai-border-width) solid var(--omai-border-subtle);
+  }
+
+  .omai-sidebar-nav[data-collapsed] {
+    width: 3.5rem;
+  }
+
+  .omai-sidebar-nav__header {
+    padding: var(--omai-space-3);
+    border-bottom: var(--omai-border-width) solid var(--omai-border-subtle);
+  }
+
+  .omai-sidebar-nav__body {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--omai-space-3) var(--omai-space-2);
+    display: flex;
+    flex-direction: column;
+    gap: var(--omai-space-4);
+  }
+
+  .omai-sidebar-nav__footer {
+    padding: var(--omai-space-3);
+    border-top: var(--omai-border-width) solid var(--omai-border-subtle);
+  }
+
+  .omai-sidebar-nav__section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--omai-space-1);
+  }
+
+  .omai-sidebar-nav__section-title {
+    padding: var(--omai-space-1) var(--omai-space-2);
+    color: var(--omai-text-muted);
+    font-size: var(--omai-text-2xs);
+    font-weight: var(--omai-weight-bold);
+    letter-spacing: var(--omai-tracking-wider);
+    text-transform: uppercase;
+  }
+
+  .omai-sidebar-nav__list,
+  .omai-sidebar-nav__sublist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .omai-sidebar-nav__sublist {
+    margin-top: 2px;
+    padding-left: var(--omai-space-4);
+    border-left: var(--omai-border-width) solid var(--omai-border-subtle);
+    margin-left: var(--omai-space-3);
+  }
+
+  .omai-sidebar-nav__row {
+    display: flex;
+    align-items: center;
+    gap: var(--omai-space-1);
+  }
+
+  .omai-sidebar-nav__link-wrap {
+    display: contents;
+  }
+
+  .omai-sidebar-nav__item {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: var(--omai-space-2);
+    min-height: var(--omai-control-h-sm);
+    padding: var(--omai-space-1) var(--omai-space-2);
+    border: none;
+    border-radius: var(--omai-radius-sm);
+    background-color: transparent;
+    color: var(--omai-text-secondary);
+    font-family: inherit;
+    font-size: var(--omai-text-sm);
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      color var(--omai-duration-fast) var(--omai-ease-out),
+      background-color var(--omai-duration-fast) var(--omai-ease-out);
+  }
+
+  .omai-sidebar-nav[data-collapsed] .omai-sidebar-nav__item {
+    justify-content: center;
+    padding: var(--omai-space-2);
+  }
+
+  .omai-sidebar-nav__item:hover:not([data-disabled]) {
+    color: var(--omai-text);
+    background-color: var(--omai-surface-2);
+  }
+
+  .omai-sidebar-nav__item:focus-visible,
+  .omai-sidebar-nav__toggle:focus-visible {
+    outline: var(--omai-focus-ring-width) solid var(--omai-focus-ring);
+    outline-offset: calc(-1 * var(--omai-focus-ring-width));
+  }
+
+  .omai-sidebar-nav__item[data-state='active'] {
+    color: var(--omai-text);
+    background-color: var(--omai-brand-soft);
+    box-shadow: inset var(--omai-border-active-width) 0 0 var(--omai-brand);
+    font-weight: var(--omai-weight-medium);
+  }
+
+  .omai-sidebar-nav__item[data-disabled] {
+    color: var(--omai-text-muted);
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .omai-sidebar-nav__icon {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .omai-sidebar-nav__label {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .omai-sidebar-nav__badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 var(--omai-space-1);
+    font-size: var(--omai-text-2xs);
+    font-weight: var(--omai-weight-bold);
+    border-radius: var(--omai-radius-sm);
+    background-color: var(--omai-surface-2);
+    color: var(--omai-text-secondary);
+  }
+
+  .omai-sidebar-nav__chevron,
+  .omai-sidebar-nav__toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--omai-text-muted);
+    background: transparent;
+    border: none;
+    padding: var(--omai-space-1);
+    border-radius: var(--omai-radius-sm);
+    cursor: pointer;
+  }
+}

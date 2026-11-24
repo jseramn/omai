@@ -1,0 +1,32 @@
+@layer components {
+  .omai-pixel-field {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--omai-field-bg);
+    border: var(--omai-border-width) solid var(--omai-border-subtle);
+    border-radius: var(--omai-radius-md);
+  }
+
+  .omai-pixel-field__canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    pointer-events: none;
+  }
+
+  .omai-pixel-field__content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--omai-space-6);
+    text-align: center;
+  }
+}

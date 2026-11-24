@@ -1,0 +1,83 @@
+{
+  "name": "@jseramn/omai",
+  "version": "0.1.0",
+  "description": "OMAI (Omarchy Based Agent Interface) React 19 component library: razor-sharp, keyboard-first UI themed by --omai-* tokens. Works with Tailwind v4 or plain CSS.",
+  "license": "SEE LICENSE IN LICENSE",
+  "author": "jseramn",
+  "homepage": "https://github.com/jseramn/omai#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jseramn/omai.git",
+    "directory": "packages/react"
+  },
+  "bugs": {
+    "url": "https://github.com/jseramn/omai/issues"
+  },
+  "keywords": [
+    "omai",
+    "react",
+    "design-system",
+    "ui-components",
+    "tailwind",
+    "agent-interface",
+    "omarchy"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "dist",
+    "src",
+    "LICENSE",
+    "NOTICE.md",
+    "README.md"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "source": "./src/index.ts",
+      "default": "./dist/index.js"
+    },
+    "./styles.css": {
+      "source": "./src/styles/index.css",
+      "default": "./dist/styles.css"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "node ../../scripts/clean.mjs dist && vite build && tsc -p tsconfig.build.json && node scripts/build-css.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@jseramn/omai-tokens": "0.1.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.78.0",
+    "tailwind-merge": "^3.7.1"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^8.0.0",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.13",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "jsdom": "^31.0.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.1"
+  }
+}
