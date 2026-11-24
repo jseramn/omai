@@ -7,7 +7,7 @@
   "homepage": "https://github.com/jseramn/omai#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jseramn/omai.git",
+    "url": "git+https://github.com/jseramn/omai.git",
     "directory": "packages/react"
   },
   "bugs": {
