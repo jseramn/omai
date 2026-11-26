@@ -124,6 +124,10 @@ export function HeroSection({ onNavigateSection, onOpenWalker }: HeroSectionProp
               razor 0px corners, 1px hairline borders, 16 official <code className="text-omai-brand">colors.toml</code>{' '}
               palettes, and 40 keyboard-first React 19 components.
             </p>
+            <div className="mt-4 flex flex-wrap justify-center gap-4 font-mono text-sm">
+              <a className="text-omai-brand underline underline-offset-4" href="https://github.com/jseramn/omai">View source on GitHub</a>
+              <a className="text-omai-brand underline underline-offset-4" href="https://www.npmjs.com/package/@jseramn/omai">Install React components</a>
+            </div>
 
             {/* Primary CTA Row */}
             <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5">
