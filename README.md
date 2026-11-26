@@ -7,6 +7,10 @@
 [![React 19](https://img.shields.io/badge/react-19.x-61dafb.svg)](https://react.dev)
 [![Tailwind v4](https://img.shields.io/badge/tailwind-4.x-38bdf8.svg)](https://tailwindcss.com)
 [![license](https://img.shields.io/badge/license-Source--Available-orange.svg)](./LICENSE)
+[![CI](https://github.com/jseramn/omai/actions/workflows/ci.yml/badge.svg)](https://github.com/jseramn/omai/actions/workflows/ci.yml)
+[![Documentation](https://img.shields.io/badge/live-documentation-823CFA)](https://omai.jseramn.tech)
+
+Explore the interactive component catalogue at [omai.jseramn.tech](https://omai.jseramn.tech).
 
 **OMAI (Omarchy Based Agent Interface)** translates the precision engineering of tiling Linux desktops into reusable, accessible web and agent UI primitives. It pairs Geist sans headings, JetBrains Mono body typography, razor-sharp `0px` corners, `1px` hairlines, and flat elevation with desktop-grade interactive components: Hyprland-style tiling grids, 26px Waybars, Walker command palettes, Mako toast decks, Ghostty ANSI terminals, and a reactive pixel-field canvas.
 
