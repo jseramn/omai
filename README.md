@@ -8,6 +8,7 @@
 [![Tailwind v4](https://img.shields.io/badge/tailwind-4.x-38bdf8.svg)](https://tailwindcss.com)
 [![license](https://img.shields.io/badge/license-Source--Available-orange.svg)](./LICENSE)
 [![CI](https://github.com/jseramn/omai/actions/workflows/ci.yml/badge.svg)](https://github.com/jseramn/omai/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/jseramn/omai)](https://github.com/jseramn/omai/releases/latest)
 [![Documentation](https://img.shields.io/badge/live-documentation-823CFA)](https://omai.jseramn.tech)
 
 Explore the interactive component catalogue at [omai.jseramn.tech](https://omai.jseramn.tech).
