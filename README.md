@@ -1,3 +1,5 @@
+<img src="assets/banner.png" alt="OMAI design system interface rendered with its React components and theme tokens" width="100%" />
+
 # OMAI — Omarchy Based Agent Interface
 
 > A razor-sharp, keyboard-first web design system and agent interface library created by **[jseramn](https://github.com/jseramn/omai)** — inspired by and based on the visual language of [omarchy.org](https://omarchy.org) and [Omarchy OS](https://github.com/omacom/omarchy) (MIT License).
