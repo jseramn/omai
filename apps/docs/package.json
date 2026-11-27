@@ -16,6 +16,7 @@
     "@fontsource-variable/jetbrains-mono": "^5.3.0",
     "@jseramn/omai": "0.1.0",
     "@jseramn/omai-tokens": "0.1.0",
+    "@vercel/analytics": "^2.0.1",
     "lucide-react": "^1.78.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"

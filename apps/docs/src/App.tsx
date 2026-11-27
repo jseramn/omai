@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import {
   Badge,
   Button,
@@ -461,6 +462,7 @@ export function App() {
     <OmaiProvider defaultTheme="tokyo-night" defaultRadius="sharp" transition="wipe">
       <ToastProvider placement="top-right" max={5}>
         <DocsWorkspaceShell />
+        <Analytics />
       </ToastProvider>
     </OmaiProvider>
   );
